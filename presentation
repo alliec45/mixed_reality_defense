@@ -21,7 +21,9 @@ Allie:
     What is the previous/related work in this area?
 Casie: 
     What various approaches, resources, and references have you used so far?
+    - We read some research papers that discuss eye-tracking security with various headsets, and studies about the privacy of its users in these scenarios. Additionally, we use Unity, Radeon GPU Profiler, and the Magic Leap 2 headset to help further our research.  
     How have you documented your work (data collection, code documentation, tutorials/wikis)?
+    - We document our work through VSCode and GitHub. We create folders to hold our videos and resources as well as having a single file containing our time line, resources to look into, and future endeavors. 
 Together: 
     What are your current challenges?
     What are your next steps?

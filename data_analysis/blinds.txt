@@ -5,10 +5,10 @@ cvip                      1.665743e+06
 cpu                       1.218131e+06
 gpu                       1.970499e+06
 5v_sys                    6.584327e+06
-wlan                      2.205875e+05
 nvme_pwr1                 2.368182e+03
 nvme_pwr3                 3.607955e+04
 nvme_pwr2                 6.995455e+03
+wlan                      2.205875e+05
 vddp_run                  6.965000e+04
 vddp_s5                   6.861705e+04
 LPDDR_PWR                 2.690651e+06

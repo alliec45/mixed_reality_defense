@@ -1,3 +1,7 @@
+#Imports
+import pandas as pd
+import matplotlib.pyplot as plt
+
 """
 Reads in a given CSV file, then filters rows based on the given time range. 
 

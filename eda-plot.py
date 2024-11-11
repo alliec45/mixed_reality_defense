@@ -59,15 +59,13 @@ def calc_stat(df):
 
 """
 def plot_all_groups(windows_group, blinds_group, hallway_group, category):
-    fig, axes = plt.subplots(1, 3, figsize=(25, 5), sharey=True)
+    fig, axes = plt.subplots(1, 3, figsize=(25, 5), constrained_layout=True)
     fig.suptitle(f'{category} vs. Time for Different Groups\n', fontsize=24)
 
     # Pass the individual axes to each plot
     plot_trials(windows_group, category, 'Windows', ax=axes[0])
     plot_trials(blinds_group, category, 'Blinds', ax=axes[1])
     plot_trials(hallway_group, category, 'Hallway', ax=axes[2])
-
-    return fig
 
 """ 
 
@@ -98,11 +96,11 @@ def plot_trials(total, category, group_name, ax):
 
 
 """
-def plot_trials(total, category, group_name):     
-    # Use ax to plot within the provided subplot axis
-    plt.set_title(f'{group_name}:{category} vs. Time', fontsize=20)
-    plt.set_xlabel('Time (s)', fontsize=15)
-    plt.set_ylabel('Power (mW)', fontsize=15)
+def plot_all_trials(total, category, group_name):   
+    plt.figure(figsize=(16, 5))
+    plt.title(f'{group_name}:{category} vs. Time', fontsize=20)
+    plt.xlabel('Time (s)', fontsize=15)
+    plt.ylabel('Power (mW)', fontsize=15)
     plt.tick_params(axis='x', rotation=30, labelsize=15)
 
     min_time = 1000
@@ -116,7 +114,7 @@ def plot_trials(total, category, group_name):
         min_time = min(min_time, df.index.min())
         max_time = max(max_time, df.index.max())
         
-    plt.set_xlim(min_time, max_time)
+    plt.xlim(min_time, max_time)
     plt.legend()
 
 """
@@ -144,8 +142,6 @@ def plot_csv(df, category, path):
 
     plt.plot(df.index, df[category])
     plt.savefig(path, bbox_inches='tight')
-
-    return fig
 
 """
 Saves and displays the given figure.

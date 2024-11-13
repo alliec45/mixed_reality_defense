@@ -6,7 +6,7 @@ This class focuses on using cleaned datasets for visual analysis. Functions prov
 of a performance indicator of room types for a single trial of a single room type, all trials of one room type, 
 and all trials for all room types. Other data analysis measures TBA. 
 
-Author(s):
+Author(s): Allie Craddock, Casie Peng 
 
 """
 ###############

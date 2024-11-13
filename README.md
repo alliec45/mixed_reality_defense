@@ -8,20 +8,20 @@ Casie Peng (casiepeng@vt.edu) |
 
 # Repository Structure 
  
- - [`/scans`](https://github.com/alliec45/mixed_reality_defense/tree/main/scans) Contains all necessary information from scanning with the headset. 
-    - `/power_profiler_scan`: contain CSVs of performance indicator data collected from the Power Profiler
-    - `/data_analysis`: outputs in the form of statistic tables and time-series graphs
-    - `scan_analysis.ipynb`: contains the code which uses `eda.py` and `plot.py` to analyze the CSVs from `/power_profiler_scan`
-    - `eda.py`: functions which use the `pandas` library for Exploratory Data Analysis (EDA)
-    - `plot.py`. functions which use the `matplotlib` library for graphical analysis  
-- [`/video_captures`](https://github.com/alliec45/mixed_reality_defense/tree/main/video_captures) Contains all videography and photography from the headset. 
-- [`/weekly_updates`](https://github.com/alliec45/mixed_reality_defense/tree/main/weekly_updates) Contains weekly updates from the team since the beginning of the project. 
+ - [`/scans`](https://github.com/alliec45/mixed_reality_defense/tree/main/scans): Contains all necessary information from scanning with the headset. 
+    - [`/power_profiler_scan`](https://github.com/alliec45/mixed_reality_defense/tree/main/scans/power_profiler_scan): contains CSVs of performance indicator data collected from the Power Profiler
+    - [`/data_analysis`](https://github.com/alliec45/mixed_reality_defense/tree/main/scans/data_analysis): outputs in the form of statistic tables and time-series graphs
+    - [`scan_analysis.ipynb`](https://github.com/alliec45/mixed_reality_defense/blob/main/scans/scan_analysis.ipynb): contains the code which uses `eda.py` and `plot.py` to analyze the CSVs from `/power_profiler_scan`
+    - [`eda.py`](https://github.com/alliec45/mixed_reality_defense/blob/main/scans/eda.py): functions which use the `pandas` library for Exploratory Data Analysis (EDA)
+    - [`plot.py`](https://github.com/alliec45/mixed_reality_defense/blob/main/scans/plot.py). functions which use the `matplotlib` library for graphical analysis  
+- [`/video_captures`](https://github.com/alliec45/mixed_reality_defense/tree/main/video_captures): Contains all videography and photography from the headset. 
+- [`/weekly_updates`](https://github.com/alliec45/mixed_reality_defense/tree/main/weekly_updates): Contains weekly updates from the team since the beginning of the project. 
 
 # Literature Review 
 ## Research Papers:
 - [It's All in Your Headset](https://www.usenix.org/system/files/sec23fall-prepub-131-zhang-yicheng.pdf)
     - Purpose - Find side-channel attacks through hand movements, concurrent applications, and location detection. 
-    - Programs - Python, C#, Memory allocation API (AppMemoryUsage), CPU, GPU, Vertex Count, Game thread time, Render thread time, backgrounfTaskHost
+    - Programs - Python, C#, Memory allocation API (AppMemoryUsage), CPU, GPU, Vertex Count, Game thread time, Render thread time, backgroundTaskHost
     - Technology - Hololens, MetaQuest2
 - [Apple Vision Pro’s Eye Tracking Exposed What People Type](https://nam04.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.wired.com%2Fstory%2Fapple-vision-pro-persona-eye-tracking-spy-typing%2F&data=05%7C02%7Ccasiepeng%40vt.edu%7C3f171c6378b241fd2df408dcd382f7ba%7C6095688410ad40fa863d4f32c1e3a37a%7C0%7C0%7C638617806691080948%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=XhRvlu5DaztAClu0slOXyrVsUOf8wvRaxJPwVpEvSAI%3D&reserved=0)
     - Purpose - informed of the accuracy of attacks on user's keyboard inputs from eye tracking in Apple Vision Pro
@@ -50,9 +50,13 @@ Casie Peng (casiepeng@vt.edu) |
     - Purpose: set up a simple meshing in Unity
 
 ## API/Library Documentation:
+- [Magic Leap 2 Hub 3](https://developer-docs.magicleap.cloud/docs/guides/developer-tools/ml-hub-3/get-started/)
+- [Magic Leap 2 Unity OpenXR](https://developer-docs.magicleap.cloud/docs/category/unity-openxr/)
 - [Unity FrameTimeManager API](https://unity.com/blog/engine-platform/detecting-performance-bottlenecks-with-unity-frame-timing-manager)
 - [Power Profiler Package](https://developer-docs.magicleap.cloud/docs/device/power/power-profiler/#)
-- [Radeon GPU Profiler](https://developer-docs.magicleap.cloud/docs/guides/developer-tools/lumin-aosp-tools/radeon-gpu-profiler/)
+- [Radeon GPU Profiler Package](https://developer-docs.magicleap.cloud/docs/guides/developer-tools/lumin-aosp-tools/radeon-gpu-profiler/)
+- [Pandas Library](https://pandas.pydata.org/docs/)
+- [Matplotlib Library](https://matplotlib.org/stable/index.html)
 
 # Future Goals: 
 1. More Complex Statistical Analysis

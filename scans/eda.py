@@ -6,7 +6,7 @@ This class is uses Exploratory Data Analysis Techniques (EDA). It focuses on usi
 parts of the data which we're interested in. It also calculates information such as mean, median, and standard deviation of the performance 
 indicators of each CSV file. It can print this information to a file. 
 
-Author(s):
+Author(s): Allie Craddock, Casie Peng 
 
 """
 ###############

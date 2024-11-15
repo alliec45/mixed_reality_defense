@@ -16,10 +16,11 @@ Reads in a given CSV file, then filters rows based on the given time range.
 
 Parameters:
 csv_file (str): The path to the CSV file.
+room_type (str): The room type of the data. 
 start_time (int): The start time to filter the data.
 end_time (int): The end time to filter the data.
 """
-def read_csv(csv, start_time, end_time):
+def csv_to_df(csv, room_type, start_time, end_time):
     #Load csv files 
     df = pd.read_csv(csv)
 
@@ -31,9 +32,11 @@ def read_csv(csv, start_time, end_time):
     df = df.apply(pd.to_numeric, errors='coerce')
 
     #Filter rows based on the time range for the scanning period
-    scan_df = df[(df['time'] >= start_time) & (df['time'] <= end_time)]
+    filtered_df = df[(df['time'] >= start_time) & (df['time'] <= end_time)]
+    filtered_df.name = room_type
 
-    return scan_df
+    return filtered_df
+
 
 """
 Takes the modified dataframe of the original CSV file and calculates statistical data. 
@@ -63,6 +66,17 @@ def calc_stat(df):
 
     return pi_table
 
+"""
+Takes a group of modified dataframes, combines them into one, 
+and uses calc_stat(df) above to calculate statistics. 
+
+Parameters:
+all_df (array[Dataframe (pandas)]): all of the dataframes to be combined 
+
+"""
+def calc_comb_stat(all_df):
+    combined = pd.concat(all_df, ignore_index=True)
+    return calc_stat(combined)
 
 """
 Takes the modified dataframe of the original CSV file and calculates statistical data. 

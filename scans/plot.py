@@ -71,7 +71,7 @@ def plot_time_series_all(total, category):
     fig.suptitle(f'{category} vs. Time for Different Groups\n', fontsize=24)
 
     # Pass the individual axes to each plot
-    for i in range(len(total)):
+    for i in range(size):
         get_time_series_trials(total[i], category, ax=axes[i])
 
         axes[i].set_title(total[i][0].name, fontsize=20)
@@ -121,7 +121,7 @@ def plot_box(df, category):
 Plots a boxplot of all trials of a singular room type. 
 
 Parameters:
-total (arr[Dataframe (pandas)]): The dataframe that is plotted
+total (arr[Dataframe (pandas)]): The dataframes that are plotted
 category (str): The performance indicator of interest
 
 """
@@ -131,8 +131,48 @@ def plot_box_trials(total, category):
 
     for i in range(len(total)):
         data = [total[i][category].to_numpy()]
-        plt.boxplot(data, positions=[i + 1])
-        #labels=[f'Trial #{i+1}']
+        plt.boxplot(data, positions=[i + 1], labels=[f'Trial #{i+1}'], widths=0.4)
+
+"""
+Plot a boxplot for all trials of all room types. 
+
+Parameters:
+total (arr[Dataframe (pandas)]): The array of arrays of dataframes that are plotted
+category (str): The performance indicator of interest
+
+"""
+def plot_box_all(total, category):
+    size = len(total)
+    fig = plt.figure(figsize=(10, 7), constrained_layout=True)
+    ax = fig.add_subplot(1, 1, 1)
+
+    ax.set_title(f'{category} for Different Groups\n', fontsize=24)
+    total_trials = 0
+
+    # Pass the individual axes to each plot
+    for i in range(size):
+        get_box_trials(total[i], category, total_trials, ax)
+        total_trials += len(total[i])
+
+    ax.set_ylabel('Power (mW)', fontsize=15)
+    ax.tick_params(axis='x', rotation=90)
+    
+
+"""
+Plots a boxplot of all trials of a singular room type. Takes in an extra figure parameter.
+
+Parameters:
+total (arr[Dataframe (pandas)]): The array of dataframes that are plotted
+category (str): The performance indicator of interest
+size (int): The number of groups (room types) that are plotted
+ax (axes): The subplot which will be plotted on 
+
+"""
+def get_box_trials(total, category, size, ax):
+    for i in range(len(total)):
+        data = [total[i][category].to_numpy()]
+        room_type = total[i].name
+        ax.boxplot(data, positions=[(size) + i], labels=[f'{room_type}: Trial #{(i + 1)}'], widths=0.6)
 
 """
 Saves and displays the given figure.
@@ -172,5 +212,5 @@ category (str): the performance indicator of interest
 def format_bp(room_type, category):
     plt.figure(figsize=(10, 5))
     plt.title(f'{room_type}: {category}', fontsize=20)
-    plt.xlabel(f'{category}', fontsize=15)
+    plt.xlabel(f'{room_type} Scans', fontsize=15)
     plt.ylabel('Power (mW)', fontsize=15)

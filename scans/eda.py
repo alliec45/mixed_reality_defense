@@ -2,7 +2,7 @@
 import pandas as pd
 
 """
-This class is uses Exploratory Data Analysis Techniques (EDA). It focuses on using Dataframes for an input of CSV files. Then it cleans and isolates 
+These functions use Exploratory Data Analysis Techniques (EDA). It focuses on using Dataframes for an input of CSV files. Then it cleans and isolates 
 parts of the data which we're interested in. It also calculates information such as mean, median, and standard deviation of the performance 
 indicators of each CSV file. It can print this information to a file. 
 
@@ -16,11 +16,10 @@ Reads in a given CSV file, then filters rows based on the given time range.
 
 Parameters:
 csv_file (str): The path to the CSV file.
-room_type (str): The room type of the data. 
 start_time (int): The start time to filter the data.
 end_time (int): The end time to filter the data.
 """
-def csv_to_df(csv, room_type, start_time, end_time):
+def csv_to_df(csv, start_time, end_time):
     #Load csv files 
     df = pd.read_csv(csv)
 
@@ -33,7 +32,6 @@ def csv_to_df(csv, room_type, start_time, end_time):
 
     #Filter rows based on the time range for the scanning period
     filtered_df = df[(df['time'] >= start_time) & (df['time'] <= end_time)]
-    filtered_df.name = room_type
 
     return filtered_df
 

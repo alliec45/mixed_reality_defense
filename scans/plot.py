@@ -105,7 +105,7 @@ def plot_box_all(total_rooms: list, category: str):
     # Pass the individual axes to each plot
     for i in range(size):
         get_box_trials(total_rooms[i], category, total_trials, ax)
-        total_trials += len(total_rooms[i])
+        total_trials += len(total_rooms[i].trials)
 
     ax.set_ylabel('Power (mW)', fontsize=15)
     ax.tick_params(axis='x', rotation=90)

@@ -13,16 +13,16 @@ Author(s): Allie Craddock, Casie Peng
 """
 ###############
 
-""" 
-This function plots a time-series model of the trials of all room types on subplots 
-for a performance indicator ('category'). 
-
-Parameters: 
-total_rooms (list): The list of Room objects 
-category (str): The performance indicator of interest. 
-
-"""
 def plot_time_series_all(total_rooms: list, category: str):
+    """ 
+    This function plots a time-series model of the trials of all room types on subplots 
+    for a performance indicator ('category'). 
+
+    Parameters: 
+    total_rooms (list): The list of Room objects 
+    category (str): The performance indicator of interest. 
+    """
+    
     size = len(total_rooms)
 
     if (size == 0):
@@ -39,15 +39,15 @@ def plot_time_series_all(total_rooms: list, category: str):
             axes[i].set_xlabel('Time (s)', fontsize=15)
             axes[i].set_ylabel('Power (mW)', fontsize=15)
 
-"""
-Loops through and plots every performance indicator (pi) in a time series (ts) model 
-for all trials for all room types on different subplots. 
-
-Parameters:
-total_rooms (list): A list of Room objects
-
-"""
 def ts_pi(total_rooms: list):
+    """
+    Loops through and plots every performance indicator (pi) in a time series (ts) model 
+    for all trials for all room types on different subplots. 
+
+    Parameters:
+    total_rooms (list): A list of Room objects
+    """
+    
     size = len(total_rooms)
 
     if (size == 0):
@@ -61,17 +61,17 @@ def ts_pi(total_rooms: list):
             plot_time_series_all(total_rooms, col)
             save(f'data_analysis/plots/all_{col}')
 
-""" 
-Plots a time-series model of all of the trials associated with an array of dataframes. 
-Helper method for the plot_all_groups method, which accepts an additional axis parameter. 
-
-Parameters: 
-room (Room): A Room object with a str identifier and the list of CSVs of a certain room type 
-category (str): the performance indicator of interest
-ax (axes): which axes the CSVs are plotted to from a group of subplots
-
-"""
 def get_time_series_trials(room: Room, category: str, ax: plt.axes):     
+    """ 
+    Plots a time-series model of all of the trials associated with an array of dataframes. 
+    Helper method for the plot_all_groups method, which accepts an additional axis parameter. 
+
+    Parameters: 
+    room (Room): A Room object with a str identifier and the list of CSVs of a certain room type 
+    category (str): the performance indicator of interest
+    ax (axes): which axes the CSVs are plotted to from a group of subplots
+    """
+    
     min_time = 1000
     max_time = 0
 
@@ -86,15 +86,15 @@ def get_time_series_trials(room: Room, category: str, ax: plt.axes):
     ax.set_xlim(min_time, max_time)
     ax.legend()
 
-"""
-Plot a boxplot for all trials of all room types. 
-
-Parameters:
-total_rooms (list): The list of Room objects 
-category (str): The performance indicator of interest
-
-"""
 def plot_box_all(total_rooms: list, category: str):
+    """
+    Plot a boxplot for all trials of all room types. 
+
+    Parameters:
+    total_rooms (list): The list of Room objects 
+    category (str): The performance indicator of interest
+    """
+    
     size = len(total_rooms)
     fig = plt.figure(figsize=(10, 7), constrained_layout=True)
     ax = fig.add_subplot(1, 1, 1)
@@ -110,30 +110,29 @@ def plot_box_all(total_rooms: list, category: str):
     ax.set_ylabel('Power (mW)', fontsize=15)
     ax.tick_params(axis='x', rotation=90)
     
-
-"""
-Plots a boxplot of all trials of a singular room type. Takes in an extra figure parameter.
-
-Parameters:
-room (Room): A Room object with a str identifier and a list of CSVs of a certain room type 
-category (str): The performance indicator of interest
-size (int): The number of groups (room types) that are plotted
-ax (axes): The subplot which will be plotted on 
-
-"""
 def get_box_trials(room: Room, category: str, size: int, ax: plt.axes):
+    """
+    Plots a boxplot of all trials of a singular room type. Takes in an extra figure parameter.
+
+    Parameters:
+    room (Room): A Room object with a str identifier and a list of CSVs of a certain room type 
+    category (str): The performance indicator of interest
+    size (int): The number of groups (room types) that are plotted
+    ax (axes): The subplot which will be plotted on 
+    """
+
     for i in range(len(room.trials)):
         data = [room.trials[i][category].to_numpy()]
         ax.boxplot(data, positions=[(size) + i], labels=[f'{room.environment}: Trial #{(i + 1)}'], widths=0.6)
 
-"""
-Saves and displays the given figure.
-
-Parameters:
-fig (matplotlib.figure.Figure): The figure to save and display.
-path (str): The path to save the figure to.
-
-"""
 def save(path: str):
+    """
+    Saves and displays the given figure.
+
+    Parameters:
+    fig (matplotlib.figure.Figure): The figure to save and display.
+    path (str): The path to save the figure to.
+    """
+
     plt.savefig(path, bbox_inches='tight')  # Save the figure
     plt.show()  # Display the figure

@@ -11,39 +11,58 @@ Author(s): Allie Craddock, Casie Peng
 """
 ###############
 
-"""
-Reads in a given CSV file, then filters rows based on the given time range. 
+def csv_to_df(csv: str, start_time: int, end_time: int, window_slide: bool):
+    """
+    Reads in a given CSV file, filters rows based on the given time range, 
+    and computes the mean of performance indicators for each second if window
+    sliding technique is confirmed. 
 
-Parameters:
-csv_file (str): The path to the CSV file.
-start_time (int): The start time to filter the data.
-end_time (int): The end time to filter the data.
-"""
-def csv_to_df(csv, start_time, end_time):
-    #Load csv files 
+    Parameters:
+    csv_file (str): The path to the CSV file.
+    start_time (int): The start time to filter the data.
+    end_time (int): The end time to filter the data.
+    window_slide (bool): Applies window_sliding technique if true. 
+
+    Returns:
+    pd.DataFrame: A dataframe of the cleaned CSV. 
+    """
+    
+    # Load csv file
     df = pd.read_csv(csv)
 
-    #Drop unnecessary rows and columns 
+    # Drop unnecessary rows and columns
     df.drop(index=0, inplace=True)
     df.drop(columns='events', inplace=True)
 
-    #Convert all columns to numeric (if they aren't already)
+    # Convert all columns to numeric (if they aren't already)
     df = df.apply(pd.to_numeric, errors='coerce')
 
-    #Filter rows based on the time range for the scanning period
-    filtered_df = df[(df['time'] >= start_time) & (df['time'] <= end_time)]
+    # Filter rows based on the time range for the scanning period
+    filtered_df = df[(df['time'] >= start_time) & (df['time'] <= end_time)].copy()
+
+    if (window_slide):
+        # Group by integer part of 'time' (grouping by second)
+        filtered_df['second'] = filtered_df['time'].astype(int)
+        grouped_df = filtered_df.groupby('second').mean()
+
+        # Add a 'time' column for time-series plotting (set to the start of the second)
+        grouped_df['time'] = grouped_df.index
+
+        # Reset index to make 'time' and 'second' columns instead of indices
+        grouped_df.reset_index(drop=True, inplace=True)
+        return grouped_df
 
     return filtered_df
 
+def calc_stat(df: pd.DataFrame):
+    """
+    Takes the modified dataframe of the original CSV file and calculates statistical data. 
+    Returns a dataframe which composites all of the new data. 
 
-"""
-Takes the modified dataframe of the original CSV file and calculates statistical data. 
-Returns a dataframe which composites all of the new data. 
-
-Parameters: 
-df (DataFrame (pandas)): The modified dataframe. 
-"""
-def calc_stat(df):
+    Parameters: 
+    df (DataFrame (pandas)): The modified dataframe. 
+    """
+    
     #Make a copy of the dataframe for modification. 
     copy = df.copy()
 
@@ -64,26 +83,27 @@ def calc_stat(df):
 
     return pi_table
 
-"""
-Takes a group of modified dataframes, combines them into one, 
-and uses calc_stat(df) above to calculate statistics. 
+def calc_comb_stat(all_df: list):
+    """
+    Takes a group of modified dataframes, combines them into one, 
+    and uses calc_stat(df) above to calculate statistics. 
 
-Parameters:
-all_df (array[Dataframe (pandas)]): all of the dataframes to be combined 
-
-"""
-def calc_comb_stat(all_df):
+    Parameters:
+    all_df (list[Dataframe (pandas)]): all of the dataframes to be combined 
+    """
     combined = pd.concat(all_df, ignore_index=True)
     return calc_stat(combined)
 
-"""
-Takes the modified dataframe of the original CSV file and calculates statistical data. 
-Returns a dataframe which composites all of the new data. 
+def print_to_file(df: pd.DataFrame, output: str):
+    """
+    Takes the modified dataframe of the original CSV file and calculates statistical data. 
+    Returns a dataframe which composites all of the new data. 
 
-Parameters: 
-df (DataFrame (pandas)): The modified dataframe. 
-"""
-def print_to_file(df, output):
+    Parameters: 
+    df (DataFrame (pandas)): The modified dataframe. 
+    output (str): Path to the output file. 
+    """
+    
     #Format the text output for readability
     output_file = output
     with open(output_file, 'w') as file:

@@ -59,7 +59,7 @@ def ts_pi(total_rooms: list):
 
         for col in column_names:
             plot_time_series_all(total_rooms, col)
-            save(f'data_analysis/plots/all_{col}')
+            #save(f'data_analysis/plots/all_{col}')
 
 def get_time_series_trials(room: Room, category: str, ax: plt.axes):     
     """ 

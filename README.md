@@ -66,3 +66,6 @@ Casie Peng (casiepeng@vt.edu) |
 5. Add More Room Types
 6. Compare Headset PIs before and after scanning
 7. Bring Headset Outside 
+8. Power Profiler - explore other profilers
+9. Look into expanding into VR Devices (Meta Quest Pro)
+

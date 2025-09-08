@@ -1,13 +1,14 @@
 # Mixed Reality Defense 
 
-This repository hosts the BURGS Project "AR Security", also known as Mixed Reality Defense. This repository hosts all of the team's work to investigate how performance indicators can be exploited to expose a MR User's location type. The project began with the an AR headset called the Magic Leap 2. 
+This repository hosts the BURGS Project "Exploting Power Telemetry to Expose XR User Environmental Information". This repository hosts all of the team's work to investigate how performance indicators can be exploited to expose an XR User's location type. The project began with the an AR headset called the Magic Leap 2. We are expanding the work to alternative headsets and XR design. 
 
 Author(s): 
 Allie Craddock (alliec45@vt.edu) | 
 Casie Peng (casiepeng@vt.edu) | 
+Gayatri Kamtala (gayatrikam@vt.edu) |
+Claire Shin (cshinh@vt.edu)
 
 # Repository Structure 
- 
  - [`/scans`](https://github.com/alliec45/mixed_reality_defense/tree/main/scans): Contains all necessary information from scanning with the headset. 
     - [`/power_profiler_scan`](https://github.com/alliec45/mixed_reality_defense/tree/main/scans/power_profiler_scan): contains CSVs of performance indicator data collected from the Power Profiler
     - [`/data_analysis`](https://github.com/alliec45/mixed_reality_defense/tree/main/scans/data_analysis): outputs in the form of statistic tables and time-series graphs
@@ -35,6 +36,10 @@ Casie Peng (casiepeng@vt.edu) |
     - Programs - OVRSeen, PolicyLint, PoliCheck, and Polisis. AntMonitor, Frida client, standard Android library, the Mbed TLS library provided by the Unity SDK, and the Unreal version of the OpenSSL library. Here's a github of their programs (which gave them access to applications): https://github.com/UCI-Networking-Group/OVRseen 
     - Technology - Oculus, Quest 2
 
+## Workshop Papers:
+- [Understanding the long-term impact and perceptions of privacy-enhancing technologies for bystander obscuration in AR](https://ieeexplore.ieee.org/abstract/document/10765311)
+- [Deceptive Patterns and Perceptual Risks in an Eye-Tracked Virtual Reality](http://www.leelisle.com/wp-content/uploads/2024/03/Deceptive_Patterns.pdf)
+
 ## Tutorials: 
 - [Magic Leap 2 Tools & Unity - Tutorial (Video)](https://www.youtube.com/watch?v=KqH0zv3e2AY)
     - Purpose - Setup ML2, tools to interact with ML2 and setting up the Hub with Unity Hub. 
@@ -59,13 +64,7 @@ Casie Peng (casiepeng@vt.edu) |
 - [Matplotlib Library](https://matplotlib.org/stable/index.html)
 
 # Future Goals: 
-1. More Complex Statistical Analysis
-2. Compare Unity Scans with Headset Scans
-3. Develop Unity Program Code (add exit features, saving features, etc.)
-4. Compare Mesh Scans with Performance Indicators
-5. Add More Room Types
-6. Compare Headset PIs before and after scanning
-7. Bring Headset Outside 
-8. Power Profiler - explore other profilers
-9. Look into expanding into VR Devices (Meta Quest Pro)
-
+1. Cross Validate across alternative profilers + VR headsets
+2. Develop more robust dataset
+3. Optimize SVM 
+4. Write workshop paper for Fall 2025 conferences 

@@ -1,4 +1,4 @@
-# Mixed Reality Defense 
+# XR Defense
 
 This repository hosts the BURGS Project "Exploting Power Telemetry to Expose XR User Environmental Information". This repository hosts all of the team's work to investigate how performance indicators can be exploited to expose an XR User's location type. The project began with the an AR headset called the Magic Leap 2. We are expanding the work to alternative headsets and XR design. 
 
@@ -9,14 +9,8 @@ Gayatri Kamtala (gayatrikam@vt.edu) |
 Claire Shin (cshinh@vt.edu)
 
 # Repository Structure 
- - [`/scans`](https://github.com/alliec45/mixed_reality_defense/tree/main/scans): Contains all necessary information from scanning with the headset. 
-    - [`/power_profiler_scan`](https://github.com/alliec45/mixed_reality_defense/tree/main/scans/power_profiler_scan): contains CSVs of performance indicator data collected from the Power Profiler
-    - [`/data_analysis`](https://github.com/alliec45/mixed_reality_defense/tree/main/scans/data_analysis): outputs in the form of statistic tables and time-series graphs
-    - [`scan_analysis.ipynb`](https://github.com/alliec45/mixed_reality_defense/blob/main/scans/scan_analysis.ipynb): contains the code which uses `eda.py` and `plot.py` to analyze the CSVs from `/power_profiler_scan`
-    - [`eda.py`](https://github.com/alliec45/mixed_reality_defense/blob/main/scans/eda.py): functions which use the `pandas` library for Exploratory Data Analysis (EDA)
-    - [`plot.py`](https://github.com/alliec45/mixed_reality_defense/blob/main/scans/plot.py). functions which use the `matplotlib` library for graphical analysis  
 - [`/video_captures`](https://github.com/alliec45/mixed_reality_defense/tree/main/video_captures): Contains all videography and photography from the headset. 
-- [`/weekly_updates`](https://github.com/alliec45/mixed_reality_defense/tree/main/weekly_updates): Contains weekly updates from the team since the beginning of the project. 
+- [`/archive`](https://github.com/alliec45/mixed_reality_defense/tree/main/archive): Contains weekly updates from the team since the beginning of the project, divided by year. Also includes archived tar files from out-of-date data collection and analysis. 
 
 # Literature Review 
 ## MR Location Detection Research Papers:

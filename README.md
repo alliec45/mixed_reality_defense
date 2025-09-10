@@ -29,12 +29,9 @@ Claire Shin (cshinh@vt.edu)
     - Purpose - To demonstrate how cyber attackers can get access to application information from a VR headset through network traffic. 
     - Programs - OVRSeen, PolicyLint, PoliCheck, and Polisis. AntMonitor, Frida client, standard Android library, the Mbed TLS library provided by the Unity SDK, and the Unreal version of the OpenSSL library. Here's a github of their programs (which gave them access to applications): https://github.com/UCI-Networking-Group/OVRseen 
     - Technology - Oculus, Quest 2
-
-## Auditing and Increasing Interpretability of Privacy Policies for Extended Reality Sensors
-- [Visual Privacy: The Impact of Privacy Labels on Privacy Behaviors Online](https://drive.google.com/file/d/1i1SlCwdUlmOj0wxwahVAKNcRtccUwHEs/view?usp=drive_link)
 - [Towards Privacy-Preserving Mixed Reality: Legal and Technical Implications](https://drive.google.com/file/d/1UQjyLQMPWSMqWTOcaGYq9C0GImGY7Kvu/view?usp=sharing)
-- [Building Eye Tracking on Meta Quest Pro Responsibly](https://drive.google.com/file/d/1h5U2KtDAaw6KtLV2bAgRkrBVY--SKnUJ/view?usp=sharing)
-- [Usable Privacy in Virtual Worlds: Design Implications for Data Collection Awareness and Control Interfaces in Virtual Reality](https://drive.google.com/file/d/1sLC1n-Dc57tKfGVpMgNqu5pX8CcEjAEV/view?usp=sharing)
+    - Purpose - Analyze how much MR headsets can collect personal and environmental data, and the implications of the collection without consent 
+    - Technology - MR headsets
 
 ## Workshop Papers:
 - [Understanding the long-term impact and perceptions of privacy-enhancing technologies for bystander obscuration in AR](https://ieeexplore.ieee.org/abstract/document/10765311)

@@ -9,6 +9,10 @@ Gayatri Kamtala (gayatrikam@vt.edu) |
 Claire Shin (cshinh@vt.edu)
 
 # Repository Structure 
+- [`/classifier_models`](https://github.com/alliec45/mixed_reality_defense/tree/main/classifier_models): Contains all of our datasets, data preprocessing, and data analysis along with our SVM models. 
+    -[`/magic_leap_2`](https://github.com/alliec45/mixed_reality_defense/tree/main/classifier_models/magic_leap_2)
+        -[`/power_profiler`](https://github.com/alliec45/mixed_reality_defense/tree/main/classifier_models/magic_leap_2/power_profiler)
+    -[`/meta_quest_pro`](https://github.com/alliec45/mixed_reality_defense/tree/main/classifier_models/meta_quest_pro)
 - [`/video_captures`](https://github.com/alliec45/mixed_reality_defense/tree/main/video_captures): Contains all videography and photography from the headset. 
 - [`/archive`](https://github.com/alliec45/mixed_reality_defense/tree/main/archive): Contains weekly updates from the team since the beginning of the project, divided by year. Also includes archived tar files from out-of-date data collection and analysis. 
 

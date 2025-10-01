@@ -12,7 +12,8 @@ Claire Shin (cshinh@vt.edu)
 - [`/classifier_models`](https://github.com/alliec45/mixed_reality_defense/tree/main/classifier_models): Contains all of our datasets, data preprocessing, and data analysis along with our SVM models. 
     - [`/magic_leap_2`](https://github.com/alliec45/mixed_reality_defense/tree/main/classifier_models/magic_leap_2): Contains all datasets and analysis for the Magic Leap 2 headset.
         - [`/power_profiler`](https://github.com/alliec45/mixed_reality_defense/tree/main/classifier_models/magic_leap_2/power_profiler)
-    - [`/meta_quest_pro`](https://github.com/alliec45/mixed_reality_defense/tree/main/classifier_models/meta_quest_pro): Contains all datasets and analysis for the Meta Quest Pro headset. 
+    - [`/meta_quest_3`](https://github.com/alliec45/mixed_reality_defense/tree/main/classifier_models/meta_quest_3): Contains all datasets and analysis for the Meta Quest 3 headset across multiple performance profilers. 
+        - [`/ovr_metrics`](https://github.com/alliec45/mixed_reality_defense/tree/main/classifier_models/meta_quest_3/ovr_metrics): Contains all the datasetsa and analysis for the scans which are profiled with the OVRMetrics tool. 
 - [`/video_captures`](https://github.com/alliec45/mixed_reality_defense/tree/main/video_captures): Contains all videography and photography from the headset. 
 - [`/archive`](https://github.com/alliec45/mixed_reality_defense/tree/main/archive): Contains weekly updates from the team since the beginning of the project, divided by year. Also includes archived tar files from out-of-date data collection and analysis. 
 

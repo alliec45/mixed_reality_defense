@@ -16,8 +16,6 @@ tracks = tp.query("""
 """).as_pandas_dataframe()
 print(tracks.head(10))
 
-import numpy as np
-
 counters_df = tp.query("""
   SELECT c.ts, c.value, ct.name AS counter_name
   FROM counter c
@@ -25,13 +23,9 @@ counters_df = tp.query("""
   ORDER BY c.ts
 """).as_pandas_dataframe()
 
-# Clean up and add a relative time column
+# clean up and add a relative time column
 counters_df = counters_df.replace(np.nan, 0)
 counters_df["t_s"] = (counters_df["ts"] - counters_df["ts"].min()) / 1e9  # ns → seconds
 
-focus = counters_df[counters_df["counter_name"]
-                    .str.contains("cpu|gpu|mem|thermal|frame", case=False, na=False)]
-
-print(focus.head(50))
-
-
+# create CSV
+counters_df.to_csv("quest_counters_long.csv", index=False)

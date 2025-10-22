@@ -1,3 +1,9 @@
 /video_captures/pp_hallway_scan.mp4
 /video_captures/pp_lab_scan.mp4
-/com.oculus.panelapp.library_Unknown Device_2025-10-8_14-13-48.pftrace
+/hallway_object_scans
+/hallway_person_scans
+/hallway_user_mvmt_scans
+/lab_clean_scans
+/lab_object_scans
+/lab_person_scans
+/lab_user_mvmt_scans

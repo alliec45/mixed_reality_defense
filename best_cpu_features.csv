@@ -1,0 +1,7 @@
+Name,diff_room_flags,same_room_flags,diff_room_rate,same_room_rate,discrimination_score
+meta.xr.mrutilitykit.dll!Meta.XR.MRUtilityKit::MRUKAnchor.Update() [Invoke],585,23,91.41,18.4,73.01
+Update.ScriptRunBehaviourUpdate,446,18,69.69,14.4,55.29
+BehaviourUpdate,445,19,69.53,15.2,54.33
+CullResults.CreateSharedRendererScene,454,25,70.94,20.0,50.94
+Shadows.CullingCallbacks,441,27,68.91,21.6,47.31
+CullSendEvents,386,24,60.31,19.2,41.11
